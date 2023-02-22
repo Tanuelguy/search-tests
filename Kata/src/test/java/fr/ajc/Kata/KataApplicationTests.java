@@ -20,10 +20,16 @@ class KataApplicationTests {
 		assertTrue(result.isEmpty());
 	}
 	@Test
-	@DisplayName(value="Test recherche city avec va, doit retourner Valencia et Vancouver")
-
+	@DisplayName(value="Test recherche city avec \"Va\", doit retourner Valencia et Vancouver")
 	public void searchCityWithVaString() {
 	    List<String> result = City.searchCities("Va");
+	    assertEquals(result.size(), 2);
+	    assertTrue(result.containsAll(Arrays.asList("Valencia", "Vancouver")));
+	}
+	@Test
+	@DisplayName(value="Test recherche city avec \"va\", doit également retourner Valencia et Vancouver")
+	public void searchCityWithVaLowerString() {
+	    List<String> result = City.searchCities("va");
 	    assertEquals(result.size(), 2);
 	    assertTrue(result.containsAll(Arrays.asList("Valencia", "Vancouver")));
 	}
