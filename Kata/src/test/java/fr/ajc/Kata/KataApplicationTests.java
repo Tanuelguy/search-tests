@@ -1,7 +1,9 @@
 package fr.ajc.Kata;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.jupiter.api.DisplayName;
@@ -16,5 +18,13 @@ class KataApplicationTests {
 	void searchCityWithTooShortStringShouldReturnEmpty() {
 		List<String> result = City.searchCities("v");
 		assertTrue(result.isEmpty());
+	}
+	@Test
+	@DisplayName(value="Test recherche city avec va, doit retourner Valencia et Vancouver")
+
+	public void searchCityWithVaString() {
+	    List<String> result = City.searchCities("va");
+	    assertEquals(result.size(), 2);
+	    assertTrue(result.containsAll(Arrays.asList("Valencia", "Vancouver")));
 	}
 }
