@@ -11,8 +11,12 @@ public class City {
 
 	public static List<String> searchCities(String text) {
 		List<String> result = new ArrayList<>();
-		if (text.length() < 2) {
+		if (text.length() < 2 & !(text.equals("*"))) {
 			return result;
+		} else if (text.equals("*")) {
+			result = cities;
+			return result;
+			
 		} else {
 			for (String city : cities) {
 				if (city.toLowerCase().contains(text.toLowerCase()))
