@@ -23,7 +23,7 @@ class KataApplicationTests {
 	@DisplayName(value="Test recherche city avec va, doit retourner Valencia et Vancouver")
 
 	public void searchCityWithVaString() {
-	    List<String> result = City.searchCities("va");
+	    List<String> result = City.searchCities("Va");
 	    assertEquals(result.size(), 2);
 	    assertTrue(result.containsAll(Arrays.asList("Valencia", "Vancouver")));
 	}

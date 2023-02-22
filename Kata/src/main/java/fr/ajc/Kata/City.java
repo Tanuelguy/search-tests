@@ -11,6 +11,11 @@ public class City {
 	
 	public static List<String> searchCities(String text){
 		List<String> result = new ArrayList<>();
+		for (String city :cities) {
+			if (city.startsWith(text))
+                result.add(city);
+		}
+		
 		return result;
 	}
 	
