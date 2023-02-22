@@ -33,4 +33,10 @@ class KataApplicationTests {
 	    assertEquals(result.size(), 2);
 	    assertTrue(result.containsAll(Arrays.asList("Valencia", "Vancouver")));
 	}
+	@Test
+	@DisplayName(value="Test recherche city avec \"ape\", doit retourner Budapest")
+	void searchCityWithapeStringShouldReturnBudapest() {
+		List<String> result = City.searchCities("ape");
+		assertTrue(result.containsAll(Arrays.asList("Budapest")));
+	}
 }
