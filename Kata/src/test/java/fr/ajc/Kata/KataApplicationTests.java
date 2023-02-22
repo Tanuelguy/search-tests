@@ -39,4 +39,12 @@ class KataApplicationTests {
 		List<String> result = City.searchCities("ape");
 		assertTrue(result.containsAll(Arrays.asList("Budapest")));
 	}
+	@Test
+	@DisplayName(value="Test recherche city avec \"*\", doit retourner toutes les villes")
+	public void searchCityWithAsterisk() {
+	    List<String> result = City.searchCities("*");
+	    assertEquals(result.size(), 16);
+	    assertTrue(result.containsAll(Arrays.asList("Paris", "Budapest", "Skopje", "Rotterdam", "Valencia", "Vancouver",
+	            "Amsterdam", "Vienna", "Sydney", "New York City", "London", "Bangkok", "Hong Kong", "Dubai", "Rome", "Istanbul")));
+	}
 }
