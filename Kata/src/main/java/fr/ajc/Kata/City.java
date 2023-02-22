@@ -15,7 +15,7 @@ public class City {
 			return result;
 		} else {
 			for (String city : cities) {
-				if (city.toLowerCase().startsWith(text.toLowerCase()))
+				if (city.toLowerCase().contains(text.toLowerCase()))
 					result.add(city);
 			}
 
