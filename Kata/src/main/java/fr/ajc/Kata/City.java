@@ -5,18 +5,22 @@ import java.util.Arrays;
 import java.util.List;
 
 public class City {
-	private static List<String> cities = Arrays.asList("Paris", "Budapest", "Skopje", "Rotterdam", "Valencia", "Vancouver",
-            "Amsterdam", "Vienna", "Sydney", "New York City", "London", "Bangkok", "Hong Kong", "Dubai", "Rome", "Istanbul");
+	private static List<String> cities = Arrays.asList("Paris", "Budapest", "Skopje", "Rotterdam", "Valencia",
+			"Vancouver", "Amsterdam", "Vienna", "Sydney", "New York City", "London", "Bangkok", "Hong Kong", "Dubai",
+			"Rome", "Istanbul");
 
-	
-	public static List<String> searchCities(String text){
+	public static List<String> searchCities(String text) {
 		List<String> result = new ArrayList<>();
-		for (String city :cities) {
-			if (city.startsWith(text))
-                result.add(city);
+		if (text.length() < 2) {
+			return result;
+		} else {
+			for (String city : cities) {
+				if (city.toLowerCase().startsWith(text.toLowerCase()))
+					result.add(city);
+			}
+
+			return result;
 		}
-		
-		return result;
 	}
-	
+
 }
